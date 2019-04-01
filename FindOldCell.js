@@ -4,8 +4,7 @@ data.forEach(function(doc) {
 
   var start = Date.now();
   var customer = db.Customers
-    .findOne({customerId: doc.customerId, cell: doc.OldCell })
-    .readConcern("majority");
+    .findOne({customerId: doc.customerId, cell: doc.OldCell });
   var total= Date.now() - start;
 
   if (customer) {
