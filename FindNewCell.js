@@ -8,9 +8,9 @@ data.forEach(function(doc) {
   var total= Date.now() - start;
 
   if (customer) {
-    print("customerId: " + customer.customerId + " New Cell: " + customer.cell + " ms: " + total);
+    print(ms + " (ms) FOUND NEW CELL customerId: " + customer.customerId + " New Cell: " + customer.cell);
   } else {
-    print("NOT FOUND customerId: " + doc.customerId + " New Cell: " + doc.NewCell + " ms: " + total);
+    print(ms + " (ms) NOT FOUND NEW CELL customerId: " + doc.customerId + " New Cell: " + doc.NewCell);
   }
 
 });

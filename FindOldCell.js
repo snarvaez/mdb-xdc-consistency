@@ -6,11 +6,11 @@ data.forEach(function(doc) {
   var customer = db.Customers
     .findOne({customerId: doc.customerId, cell: doc.OldCell });
   var total= Date.now() - start;
-
+  
   if (customer) {
-    print("customerId: " + customer.customerId + " Old Cell: " + customer.cell + " ms: " + total);
+    print(ms + " (ms) FOUND OLD CELL customerId: " + customer.customerId + " New Cell: " + customer.cell);
   } else {
-    print("NOT FOUND customerId: " + doc.customerId + " Old Cell: " + doc.OldCell + " ms: " + total);
+    print(ms + " (ms) NOT FOUND OLD CELL customerId: " + doc.customerId + " Old Cell: " + doc.OldCell);
   }
 
 });

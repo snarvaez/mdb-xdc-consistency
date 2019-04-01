@@ -16,7 +16,7 @@ function updateCustomerCell(sample, iterations) {
       var oldCell = doc.cell;
       var newCell = getRnd(1111111111, 9999999999);
 
-      print("customerId: " + doc.customerId + " Old Cell: " + oldCell + " New Cell: " + newCell);
+      print("SET NEW CELL customerId: " + doc.customerId + " Old Cell: " + oldCell + " New Cell: " + newCell);
 
       bulk.find({"customerId": doc.customerId})
           .update({$set: {"cell": newCell}});
