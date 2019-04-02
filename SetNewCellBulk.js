@@ -10,4 +10,8 @@ data.forEach(function(doc) {
       .update({$set: {"cell": doc.NewCell}});
 });
 
+var start = Date.now();
 bulk.execute({w:'majority'});
+var total= Date.now() - start;
+
+print(total + " (ms) BULK majority write");

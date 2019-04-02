@@ -14,9 +14,11 @@ data.forEach(function(doc) {
   var total= Date.now() - start;
 
   if (cursor[0]) {
-    print(total + " (ms) FOUND NEW CELL customerId: " + cursor[0].customerId + " New Cell: " + cursor[0].cell);
+    print(total + " (ms) FOUND NEW CELL");
+    print("customerId: " + cursor[0].customerId + " New Cell: " + cursor[0].cell);
   } else {
-    print(total + " (ms) NOT FOUND NEW CELL customerId: " + doc.customerId + " New Cell: " + doc.NewCell);
+    print(total + " (ms) NOT FOUND NEW CELL");
+    print("customerId: " + doc.customerId + " New Cell: " + doc.NewCell);
   }
 
 });
