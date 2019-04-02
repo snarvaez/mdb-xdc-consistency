@@ -22,7 +22,7 @@ function updateCustomerCell(sample, iterations) {
           .update({$set: {"cell": newCell}});
     });
 
-    bulk.execute();
+    bulk.execute({w:'majority'});
   }
 }
 

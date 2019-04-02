@@ -6,6 +6,7 @@ data.forEach(function(doc) {
 
   db.Customers.findOneAndUpdate(
     {"customerId": doc.customerId},
-    {$set: {"cell": doc.NewCell}}
+    {$set: {"cell": doc.NewCell}},
+    {w:"majority"}
   );
 });

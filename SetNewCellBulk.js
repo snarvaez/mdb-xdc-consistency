@@ -10,4 +10,4 @@ data.forEach(function(doc) {
       .update({$set: {"cell": doc.NewCell}});
 });
 
-bulk.execute();
+bulk.execute({w:'majority'});
