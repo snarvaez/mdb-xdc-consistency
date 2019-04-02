@@ -9,7 +9,7 @@ data.forEach(function(doc) {
 
   var cursor = db.Customers
     .find({customerId: doc.customerId, cell: doc.OldCell })
-    .readConcern("linearizable");
+    .readConcern("linearizable").maxTimeMS(10000);
 
   var total= Date.now() - start;
 
