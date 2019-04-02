@@ -8,7 +8,7 @@ data.forEach(function(doc) {
   var start = Date.now();
 
   var cursor = db.Customers
-    .findOne({customerId: doc.customerId, cell: doc.OldCell })
+    .find({customerId: doc.customerId, cell: doc.OldCell })
     .readConcern("majority");
 
   var total= Date.now() - start;
